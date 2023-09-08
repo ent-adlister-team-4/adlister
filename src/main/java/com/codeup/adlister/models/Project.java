@@ -1,5 +1,7 @@
 package com.codeup.adlister.models;
 
+import java.util.List;
+
 public class Project {
     private long id;
     private long userId;
