@@ -1,5 +1,10 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.dao.MySQLProjectsDao;
+import com.codeup.adlister.dao.Projects;
+import com.codeup.adlister.models.Project;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,16 +27,19 @@ public class EditProject extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-//	try {
-//		String projectId = request.getParameter("projectId");
-//		String newName = request.getParameter("newName");
-//		String newDescription = request.getParameter("newDescription");
-//	}catch (ServletException e) {
-//		throw new RuntimeException(e);
-//	}catch (IOException e) {
-//		throw new RuntimeException(e);
-//	}
+	try {
+		long projectId = Long.parseLong(req.getParameter("projectId"));
+		String newName = req.getParameter("newName");
+		String newDescription = req.getParameter("newDescription");
 
+		Project updatedProject = new Project(projectId, newName, newDescription);
+
+		Projects projectsDao = DaoFactory.getProjectsDao();
+		projectsDao.editProject(updatedProject);
+
+	}catch (NumberFormatException e) {
+		throw new RuntimeException(e);
+	}
 
 	}
 }
