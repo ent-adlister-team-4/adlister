@@ -5,19 +5,19 @@ import java.util.List;
 public class Project {
     private long id;
     private long userId;
-    private String title;
+    private String name;
     private String description;
 
-    public Project(long id, long userId, String title, String description) {
+    public Project(long id, long userId, String name, String description) {
         this.id = id;
         this.userId = userId;
-        this.title = title;
+        this.name = name;
         this.description = description;
     }
 
-    public Project(long userId, String title, String description) {
+    public Project(long userId, String name, String description) {
         this.userId = userId;
-        this.title = title;
+        this.name = name;
         this.description = description;
     }
 
@@ -37,12 +37,12 @@ public class Project {
         this.userId = userId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
