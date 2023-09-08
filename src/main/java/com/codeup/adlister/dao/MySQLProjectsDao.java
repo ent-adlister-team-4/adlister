@@ -1,19 +1,16 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Project;
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads {
+public class MySQLProjectsDao implements Projects {
     private Connection connection = null;
 
-    public MySQLAdsDao(Config config) {
+    public MySQLProjectsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -27,10 +24,10 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> all() {
+    public List<Project> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM Projects");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -39,13 +36,13 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insert(Ad ad) {
+    public Long insert(Project project) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO Projects(user_id, name, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            stmt.setLong(1, project.getUserId());
+            stmt.setString(2, project.getTitle());
+            stmt.setString(3, project.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -55,8 +52,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    private Ad extractAd(ResultSet rs) throws SQLException {
-        return new Ad(
+    private Project extractProject(ResultSet rs) throws SQLException {
+        return new Project(
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
@@ -64,11 +61,11 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
-    private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
-        List<Ad> ads = new ArrayList<>();
+    private List<Project> createAdsFromResults(ResultSet rs) throws SQLException {
+        List<Project> projects = new ArrayList<>();
         while (rs.next()) {
-            ads.add(extractAd(rs));
+            projects.add(extractProject(rs));
         }
-        return ads;
+        return projects;
     }
 }
