@@ -14,6 +14,13 @@ public class User {
 
     public User() {}
 
+    public User(long id, String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.id = id;
+    }
+
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
@@ -28,6 +35,8 @@ public class User {
         this.projects = projects;
         this.comments = comments;
     }
+
+
 
     public long getId() {
         return id;
