@@ -10,5 +10,5 @@ public interface Projects {
     // insert a new ad and return the new ad's id
     Long insert(Project project);
 
-    List<Project> insert(Project project);
+//    List<Project> insert(Project project);
 }

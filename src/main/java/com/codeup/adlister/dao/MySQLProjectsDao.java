@@ -7,10 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Projects {
+public class MySQLProjectsDao implements Projects {
     private Connection connection = null;
 
-    public MySQLAdsDao(Config config) {
+    public MySQLProjectsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -27,7 +27,7 @@ public class MySQLAdsDao implements Projects {
     public List<Project> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM Projects");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -36,9 +36,9 @@ public class MySQLAdsDao implements Projects {
     }
 
     @Override
-    public List<Project> insert(Project project) {
+    public Long insert(Project project) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO Projects(user_id, name, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, project.getUserId());
             stmt.setString(2, project.getTitle());
