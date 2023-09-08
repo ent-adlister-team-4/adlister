@@ -1,7 +1,7 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.controllers.EditProject;
 import com.codeup.adlister.models.Project;
-import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -21,6 +21,20 @@ public class MySQLProjectsDao implements Projects {
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
+        }
+    }
+
+    public void editProject(Project project) {
+        try {
+            String query = "UPDATE dev_project_lister.Projects SET name = ?, description = ? WHERE project_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, project.getName());
+            stmt.setString(2, project.getDescription());
+            stmt.setLong(3, project.getId());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error in editing project.", e);
         }
     }
 
