@@ -26,7 +26,7 @@
                 <div class="modal-body systemModalText" style="border: black solid 1px">
                     <div class="container">
                         <h1>Project Details</h1>
-                        <form action="/ads/create" method="POST">
+                        <form action="/profile" method="POST">
                             <div class="form-group">
                                 <label for="project_name">Project Name</label>
                                 <input id="project_name" name="project_name" class="form-control" type="text">

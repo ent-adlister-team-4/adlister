@@ -67,6 +67,7 @@ public class MySQLProjectsDao implements Projects {
         }
     }
 
+
     private Project extractProject(ResultSet rs) throws SQLException {
         return new Project(
 //            rs.getLong("id"),
