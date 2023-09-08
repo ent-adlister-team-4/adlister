@@ -56,7 +56,7 @@ public class MySQLProjectsDao implements Projects {
             String insertQuery = "INSERT INTO Projects(user_id, name, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, project.getUserId());
-            stmt.setString(2, project.getTitle());
+            stmt.setString(2, project.getName());
             stmt.setString(3, project.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -69,9 +69,9 @@ public class MySQLProjectsDao implements Projects {
 
     private Project extractProject(ResultSet rs) throws SQLException {
         return new Project(
-            rs.getLong("id"),
+//            rs.getLong("id"),
             rs.getLong("user_id"),
-            rs.getString("title"),
+            rs.getString("name"),
             rs.getString("description")
         );
     }
