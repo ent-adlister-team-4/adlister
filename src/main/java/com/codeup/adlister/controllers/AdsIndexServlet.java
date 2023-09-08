@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/projects")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("projects", DaoFactory.getAdsDao().all());
+        request.setAttribute("projects", DaoFactory.getProjectsDao().all());
         request.getRequestDispatcher("/WEB-INF/projects.jsp").forward(request, response);
     }
 }
