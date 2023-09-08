@@ -21,6 +21,11 @@ public class Project {
         this.description = description;
     }
 
+    public Project(String projectName, String projectDetails) {
+        this.name = projectName;
+        this.description = projectDetails;
+    }
+
     public long getId() {
         return id;
     }

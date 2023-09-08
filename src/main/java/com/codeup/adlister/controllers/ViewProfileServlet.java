@@ -1,5 +1,10 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.dao.Projects;
+import com.codeup.adlister.models.Project;
+import com.codeup.adlister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,5 +20,22 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User loggedInUser = (User) req.getSession().getAttribute("user");
+        try {
+            String projectName = req.getParameter("project_name");
+            String projectDetails = req.getParameter("project_details");
+
+            Project addProject = new Project(loggedInUser.getId(),projectName, projectDetails);
+
+            Projects projectsDao = DaoFactory.getProjectsDao();
+            projectsDao.insert(addProject);
+
+        }catch (NumberFormatException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
