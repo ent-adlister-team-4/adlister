@@ -11,9 +11,24 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <c:forEach var="project" items="${projects}">
-    <div class="col-md-6">
-        <h2>${project.name}</h2>
-        <p>${project.description}</p>
+<%--    <div class="col-md-6">--%>
+<%--        <p></p>--%>
+<%--    </div>--%>
+<%--    <div class="card" style="width: 18rem;">--%>
+<%--        <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0" class="card-img-top" alt="place-holder">--%>
+<%--        <div class="card-body">--%>
+<%--            <h5 class="card-text">${project.name}</h5>--%>
+<%--            <p class="card-text">${project.description}</p>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+
+    <div class="card mb-3" style="width: 25vw">
+        <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0" class="card-img-top" alt="place-holder">
+        <div class="card-body">
+            <h5 class="card-title">${project.name}</h5>
+            <p class="card-text">${project.description}</p>
+<%--            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>--%>
+        </div>
     </div>
 </c:forEach>
 
