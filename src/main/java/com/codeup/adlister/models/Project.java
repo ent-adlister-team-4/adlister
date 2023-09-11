@@ -57,4 +57,8 @@ public class Project {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String toString() {
+        return String.format("id: %s%nname: %s%n desc: %s%n", this.id, this.name, this.description);
+    }
 }

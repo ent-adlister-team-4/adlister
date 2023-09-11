@@ -29,12 +29,15 @@ public class EditProject extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
 	try {
 		long projectId = Long.parseLong(req.getParameter("projectId"));
+		System.out.println(projectId);
 		String newName = req.getParameter("newName");
 		String newDescription = req.getParameter("newDescription");
 
-		Project updatedProject = new Project(projectId, newName, newDescription);
 
 		Projects projectsDao = DaoFactory.getProjectsDao();
+		Project updatedProject = projectsDao.byProjectId(projectId);
+		updatedProject.setName(newName);
+		updatedProject.setDescription(newDescription);
 		projectsDao.editProject(updatedProject);
 
 		try {
