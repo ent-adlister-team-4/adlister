@@ -28,7 +28,6 @@ public class ViewProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User loggedInUser = (User) req.getSession().getAttribute("user");
-//        String projectId = req.getParameter("projectID");
         try {
             String projectName = req.getParameter("project_name");
             String projectDetails = req.getParameter("project_details");
@@ -42,12 +41,6 @@ public class ViewProfileServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-//        if (projectId != null) {
-//            long projectIdLong = Long.parseLong(projectId);
-//            Projects projectsDao = DaoFactory.getProjectsDao();
-//            projectsDao.deleteProject(projectIdLong);
-//            resp.sendRedirect("/profile");
-//        }
 
     }
 }

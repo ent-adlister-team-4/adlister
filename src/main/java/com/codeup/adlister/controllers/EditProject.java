@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet(name = "controllers.EditProject", urlPatterns = "/edit")
+@WebServlet("/edit")
 public class EditProject extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
@@ -36,6 +36,12 @@ public class EditProject extends HttpServlet {
 
 		Projects projectsDao = DaoFactory.getProjectsDao();
 		projectsDao.editProject(updatedProject);
+
+		try {
+			resp.sendRedirect("/profile");
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 
 	}catch (NumberFormatException e) {
 		throw new RuntimeException(e);
