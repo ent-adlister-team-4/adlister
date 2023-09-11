@@ -25,9 +25,11 @@ public class MySQLProjectsDao implements Projects {
     }
 
     public void editProject(Project project) {
+        System.out.println("inside editProject DAO method. project received: ");
+        System.out.println(project);
         try {
             String query = "UPDATE dev_project_lister.Projects SET name = ?, description = ? WHERE project_id = ?";
-            PreparedStatement stmt = connection.prepareStatement(query);
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, project.getName());
             stmt.setString(2, project.getDescription());
             stmt.setLong(3, project.getId());
@@ -57,6 +59,19 @@ public class MySQLProjectsDao implements Projects {
             stmt.setLong(1, userId);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public Project byProjectId(long projectId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM Projects WHERE project_id = ?");
+            stmt.setLong(1, projectId);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractProject(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }

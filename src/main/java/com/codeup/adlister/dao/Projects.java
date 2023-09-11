@@ -12,7 +12,9 @@ public interface Projects {
 
     void editProject(Project project);
 
-    Object byUser(long id);
+    List<Project> byUser(long id);
+
+    Project byProjectId(long projectId);
 
     void deleteProject(long id);
 
