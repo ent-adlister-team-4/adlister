@@ -1,8 +1,7 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.controllers.EditProject;
 import com.codeup.adlister.models.Project;
-import com.codeup.adlister.util.Config;
+
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -16,9 +15,9 @@ public class MySQLProjectsDao implements Projects {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -63,7 +62,20 @@ public class MySQLProjectsDao implements Projects {
         }
     }
 
+    public void deleteProject(long projectId) {
+        try {
+            String query = "DELETE FROM Projects WHERE project_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, projectId);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return;
 
+        } catch (SQLException e) {
+            throw new RuntimeException("Error in deleting project.", e);
+        }
+    }
 
     @Override
     public Long insert(Project project) {
@@ -85,10 +97,10 @@ public class MySQLProjectsDao implements Projects {
 
     private Project extractProject(ResultSet rs) throws SQLException {
         return new Project(
-//            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("name"),
-            rs.getString("description")
+                rs.getLong("project_id"),
+                rs.getLong("user_id"),
+                rs.getString("name"),
+                rs.getString("description")
         );
     }
 
