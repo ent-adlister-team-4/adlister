@@ -12,5 +12,7 @@ public interface Projects {
 
     void editProject(Project project);
 
+    Object byUser(long id);
+
 //    List<Project> insert(Project project);
 }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
@@ -49,6 +50,18 @@
             </div>
         </div>
     </div>
+</div>
+
+<h2>Your Projects</h2>
+<div class="row">
+    <c:forEach var="project" items="${projects}">
+<%--        <c:if test="${project.user_id == loggedInUser}">--%>
+            <div class="col-md-6">
+                <h3>${project.name}</h3>
+                <p>${project.description}</p>
+            </div>
+<%--        </c:if>--%>
+    </c:forEach>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
