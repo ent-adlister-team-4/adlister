@@ -65,8 +65,7 @@
 
             <div class="card-footer d-flex justify-content-between">
 
-                <button class="btn btn-primary">Edit</button>
-
+                <a href="/edit?projectID=${project.id}" class="btn btn-primary edit-btn">Edit</a>
                 <form action="/delete" method="POST">
                     <input type="hidden" name="projectID" value="${project.id}">
                     <button type="submit" class="btn btn-warning delete-btn">Delete</button>
