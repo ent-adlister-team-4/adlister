@@ -5,6 +5,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -13,9 +14,7 @@
     <h1>Welcome, ${sessionScope.user.username}!</h1>
 
 
-    <button class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#systemStaticBackdrop">Add Project
-    </button>
+    <%--Modal for adding a project--%>
     <div class="modal fade" id="systemStaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" style="max-height: 600px">
@@ -52,21 +51,44 @@
     </div>
 </div>
 
-<h2>Your Projects</h2>
-<div class="row">
+
+<div class="container-hero d-flex flex-wrap justify-content-between">
+    <h2 class="col-12">Your Projects</h2>
     <c:forEach var="project" items="${projects}">
-<%--        <c:if test="${project.user_id == loggedInUser}">--%>
-            <div class="col-md-6">
-                <h3>${project.name}</h3>
-                <p>${project.description}</p>
+        <div class="card">
+            <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0"
+                 class="card-img-top" alt="place-holder">
+            <div class="card-body">
+                <h5 class="card-title">${project.name}</h5>
+                <p class="card-text">${project.description}</p>
             </div>
-<%--        </c:if>--%>
+
+            <div class="card-footer d-flex justify-content-between">
+
+                <button class="btn btn-primary">Edit</button>
+
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="projectID" value="${project.id}">
+                    <button type="submit" class="btn btn-warning delete-btn">Delete</button>
+                </form>
+
+            </div>
+
+        </div>
     </c:forEach>
+    <div class="col-12">
+        <button class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#systemStaticBackdrop">Add Project
+        </button>
+    </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+
+
 </body>
 </html>
 

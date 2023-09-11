@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.nio.file.Files;
+
 
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
@@ -28,17 +28,26 @@ public class ViewProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User loggedInUser = (User) req.getSession().getAttribute("user");
+//        String projectId = req.getParameter("projectID");
         try {
             String projectName = req.getParameter("project_name");
             String projectDetails = req.getParameter("project_details");
 
-            Project addProject = new Project(loggedInUser.getId(),projectName, projectDetails);
+            Project addProject = new Project(loggedInUser.getId(), projectName, projectDetails);
 
             Projects projectsDao = DaoFactory.getProjectsDao();
             projectsDao.insert(addProject);
 
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new RuntimeException(e);
         }
+
+//        if (projectId != null) {
+//            long projectIdLong = Long.parseLong(projectId);
+//            Projects projectsDao = DaoFactory.getProjectsDao();
+//            projectsDao.deleteProject(projectIdLong);
+//            resp.sendRedirect("/profile");
+//        }
+
     }
 }

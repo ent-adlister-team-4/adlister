@@ -14,5 +14,7 @@ public interface Projects {
 
     Object byUser(long id);
 
+    void deleteProject(long id);
+
 //    List<Project> insert(Project project);
 }
