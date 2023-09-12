@@ -65,10 +65,10 @@
 
             <div class="card-footer d-flex justify-content-between">
 
-                <a href="/edit?projectID=${project.id}" class="btn btn-primary edit-btn">Edit</a>
+                <a href="/edit?projectID=${project.id}" class="btn edit-btn">Edit</a>
                 <form action="/delete" method="POST">
                     <input type="hidden" name="projectID" value="${project.id}">
-                    <button type="submit" class="btn btn-warning delete-btn">Delete</button>
+                    <button type="submit" class="btn delete-btn">Delete</button>
                 </form>
 
             </div>
@@ -76,7 +76,7 @@
         </div>
     </c:forEach>
     <div class="col-12">
-        <button class="btn btn-primary" data-bs-toggle="modal"
+        <button class="btn " data-bs-toggle="modal"
                 data-bs-target="#systemStaticBackdrop">Add Project
         </button>
     </div>
