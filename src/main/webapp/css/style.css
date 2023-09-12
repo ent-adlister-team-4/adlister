@@ -20,7 +20,18 @@
     min-width: 300px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: shadow-animation 2s infinite alternate ease-in-out;
 }
+
+@keyframes shadow-animation {
+     0% {
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+     }
+     100% {
+         box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+     }
+ }
 
 .card:hover {
     transform: scale(1.05);
