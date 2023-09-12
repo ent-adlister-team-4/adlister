@@ -6,9 +6,9 @@
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
     <link rel="stylesheet" href="../css/style.css">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
@@ -57,25 +57,67 @@
                 <p class="card-text">${project.description}</p>
             </div>
 
-            <div class="card-footer d-flex justify-content-between">
+                <%--     UI Button Edit    --%>
+            <div class="container-fluid mt-1 mb-1">
+            <a href="/edit?projectID=${project.id}">
+                <button class="btn-53 container-fluid">
+                    <div class="original">Edit</div>
+                    <div class="letters">
 
-                <a href="/edit?projectID=${project.id}" class="btn btn-primary edit-btn">Edit</a>
-                <form action="/delete" method="POST">
-                    <input type="hidden" name="projectID" value="${project.id}">
-                    <button type="submit" class="btn btn-warning delete-btn">Delete</button>
-                </form>
-
+                        <span>E</span>
+                        <span>D</span>
+                        <span>I</span>
+                        <span>T</span>
+                    </div>
+                </button>
+            </a>
             </div>
+                <%--     UI Button Edit    --%>
 
+                <%--UI Delete Button--%>
+            <div class="container-fluid">
+            <form action="/delete" method="POST">
+                <input type="hidden" name="projectID" value="${project.id}">
+                <button type="submit" class="btn-53 container-fluid">
+                    <div class="original">Delete</div>
+                    <div class="letters">
+
+                        <span>D</span>
+                        <span>E</span>
+                        <span>L</span>
+                        <span>E</span>
+                        <span>T</span>
+                        <span>E</span>
+                    </div>
+                </button>
+            </form>
+            </div>
+                <%--UI Delete Button--%>
         </div>
+
     </c:forEach>
     <div class="col-12">
-        <button class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#systemStaticBackdrop">Add Project
-        </button>
-    </div>
-</div>
+<%--Add project button--%>
+    <button class="btn-53 container-fluid" data-bs-toggle="modal"
+            data-bs-target="#systemStaticBackdrop">
+        <div class="original">Add Project</div>
+        <div class="letters">
 
+            <span>A</span>
+            <span>D</span>
+            <span>D</span>
+            <span>&nbsp;</span>
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>J</span>
+            <span>E</span>
+            <span>C</span>
+            <span>T</span>
+
+        </div>
+    </button>
+<%--Add project button--%>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
