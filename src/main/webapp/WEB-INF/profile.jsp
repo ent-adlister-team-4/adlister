@@ -35,10 +35,19 @@
                                 <label for="project_details">Project Details</label>
                                 <input id="project_details" name="project_details" class="form-control" type="text">
                             </div>
-                            <input type="submit" class="btn btn-primary btn-block" value="Add">
+                            <%--        UI Button        --%>
+                            <button type="submit" class="btn-53 mt-2 container-fluid" value="Add">
+                                <div class="original">Add</div>
+                                <div class="letters">
+
+                                    <span>A</span>
+                                    <span>D</span>
+                                    <span>D</span>
+                                </div>
+                            </button>
+                            <%--        UI Button        --%>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbarDark"
                  aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Offcanvas</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Menu</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                 </div>
@@ -43,7 +43,20 @@
                     <form class="d-flex mt-3" role="search" action="/projects" method="get">
                         <input class="form-control me-2" type="search" name="query" placeholder="Search projects..."
                                aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                            <%--  UI Button  --%>
+                        <button type="submit" class="btn-53 d-flex justify-content-center">
+                            <div class="original">Search</div>
+                            <div class="letters">
+
+                                <span>S</span>
+                                <span>E</span>
+                                <span>A</span>
+                                <span>R</span>
+                                <span>C</span>
+                                <span>H</span>
+                            </div>
+                        </button>
+                            <%--  UI Button  --%>
                     </form>
                 </div>
             </div>
@@ -64,7 +77,7 @@
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbarDark"
                  aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Offcanvas</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Menu</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                 </div>
@@ -87,14 +100,26 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
-<%--                                <li><a class="dropdown-item" href="/register">Register</a></li>--%>
                             </ul>
                         </li>
                     </ul>
                     <form class="d-flex mt-3" role="search" action="/projects" method="get">
                         <input class="form-control me-2" type="search" name="query" placeholder="Search projects..."
                                aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                            <%--  UI Button  --%>
+                        <button type="submit" class="btn-53 d-flex justify-content-center">
+                            <div class="original">Search</div>
+                            <div class="letters">
+
+                                <span>S</span>
+                                <span>E</span>
+                                <span>A</span>
+                                <span>R</span>
+                                <span>C</span>
+                                <span>H</span>
+                            </div>
+                        </button>
+                            <%--  UI Button  --%>
                     </form>
                 </div>
             </div>
