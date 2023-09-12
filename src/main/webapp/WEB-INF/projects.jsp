@@ -11,16 +11,17 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<form action="/projects" method="GET">
-    <input type="text" name="query" placeholder="Search projects...">
-    <button type="submit">Search</button>
-</form>
+<%--<form action="/projects" method="GET">--%>
+<%--    <input type="text" name="query" placeholder="Search projects...">--%>
+<%--    <button type="submit">Search</button>--%>
+<%--</form>--%>
 
 <div class="container-hero d-flex flex-wrap justify-content-between">
     <c:forEach var="project" items="${searchResults}">
           <div class="card">
-              <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0" class="card-img-top" alt="place-holder">
-              <div class="card-body">
+<%--              <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0" class="card-img-top" alt="place-holder">--%>
+                    <img src="../img/grey1.jpeg" alt="Description of your image">
+                    <div class="card-body">
                   <h5 class="card-title">${project.name}</h5>
                   <p class="card-text">${project.description}</p>
               </div>
