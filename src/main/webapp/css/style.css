@@ -20,3 +20,7 @@
 .card:hover {
     transform: scale(1.05);
 }
+
+#title {
+    padding-top: 50px !important;
+}

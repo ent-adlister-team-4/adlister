@@ -65,7 +65,9 @@
 <c:if test="${user == null}">
     <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Dev Project Lister</a>
+            <div class="py-4">
+                <a class="navbar-brand" href="/">Dev Project Lister</a>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark"
                     aria-label="Toggle navigation">
@@ -114,7 +116,7 @@
 <c:if test="${user != null}">
     <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Dev Project Lister</a>
+                <a class="navbar-brand" href="/">Dev Project Lister</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark"
                     aria-label="Toggle navigation">

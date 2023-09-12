@@ -1,5 +1,7 @@
 package com.codeup.adlister.models;
 
+import com.codeup.adlister.dao.MySQLUsersDao;
+
 import java.util.List;
 
 public class Project {
@@ -61,4 +63,6 @@ public class Project {
     public String toString() {
         return String.format("id: %s%nname: %s%n desc: %s%n", this.id, this.name, this.description);
     }
+
+
 }
