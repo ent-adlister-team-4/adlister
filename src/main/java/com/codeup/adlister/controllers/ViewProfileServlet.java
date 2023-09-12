@@ -37,6 +37,12 @@ public class ViewProfileServlet extends HttpServlet {
             Projects projectsDao = DaoFactory.getProjectsDao();
             projectsDao.insert(addProject);
 
+            try {
+                resp.sendRedirect("/profile");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         } catch (NumberFormatException e) {
             throw new RuntimeException(e);
         }

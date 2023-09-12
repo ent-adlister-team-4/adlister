@@ -40,12 +40,6 @@
                     </div>
 
                 </div>
-                <div class="modal-footer" style="border: black solid 1px">
-                    <div class="modal-footer" style="border: black solid 1px">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Nope</button>
-                        <button type="button" class="btn btn-primary">Confirm</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
