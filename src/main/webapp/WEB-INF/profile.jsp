@@ -49,16 +49,16 @@
 <div class="container-hero d-flex flex-wrap justify-content-between">
     <h2 class="col-12">Your Projects</h2>
     <c:forEach var="project" items="${projects}">
-        <div class="card">
-            <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0"
-                 class="card-img-top" alt="place-holder">
-            <div class="card-body">
-                <h5 class="card-title">${project.name}</h5>
-                <p class="card-text">${project.description}</p>
-            </div>
+    <div class="card">
+        <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0"
+             class="card-img-top" alt="place-holder">
+        <div class="card-body">
+            <h5 class="card-title">${project.name}</h5>
+            <p class="card-text">${project.description}</p>
+        </div>
 
-                <%--     UI Button Edit    --%>
-            <div class="container-fluid mt-1 mb-1">
+            <%--     UI Button Edit    --%>
+        <div class="container-fluid mt-1 mb-1">
             <a href="/edit?projectID=${project.id}">
                 <button class="btn-53 container-fluid">
                     <div class="original">Edit</div>
@@ -71,11 +71,11 @@
                     </div>
                 </button>
             </a>
-            </div>
-                <%--     UI Button Edit    --%>
+        </div>
+            <%--     UI Button Edit    --%>
 
-                <%--UI Delete Button--%>
-            <div class="container-fluid">
+            <%--UI Delete Button--%>
+        <div class="container-fluid">
             <form action="/delete" method="POST">
                 <input type="hidden" name="projectID" value="${project.id}">
                 <button type="submit" class="btn-53 container-fluid">
@@ -91,37 +91,37 @@
                     </div>
                 </button>
             </form>
-            </div>
-                <%--UI Delete Button--%>
         </div>
+            <%--UI Delete Button--%>
+    </div>
 
     </c:forEach>
     <div class="col-12">
-<%--Add project button--%>
-    <button class="btn-53 container-fluid" data-bs-toggle="modal"
-            data-bs-target="#systemStaticBackdrop">
-        <div class="original">Add Project</div>
-        <div class="letters">
+        <%--Add project button--%>
+        <button class="btn-53 container-fluid" data-bs-toggle="modal"
+                data-bs-target="#systemStaticBackdrop">
+            <div class="original">Add Project</div>
+            <div class="letters">
 
-            <span>A</span>
-            <span>D</span>
-            <span>D</span>
-            <span>&nbsp;</span>
-            <span>P</span>
-            <span>R</span>
-            <span>O</span>
-            <span>J</span>
-            <span>E</span>
-            <span>C</span>
-            <span>T</span>
+                <span>A</span>
+                <span>D</span>
+                <span>D</span>
+                <span>&nbsp;</span>
+                <span>P</span>
+                <span>R</span>
+                <span>O</span>
+                <span>J</span>
+                <span>E</span>
+                <span>C</span>
+                <span>T</span>
 
-        </div>
-    </button>
-<%--Add project button--%>
+            </div>
+        </button>
+        <%--Add project button--%>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                crossorigin="anonymous"></script>
 
 
 </body>
