@@ -19,7 +19,20 @@
             <input id="newDescription" name="newDescription" class="form-control" type="text">
         </div>
         <input type="hidden" name="projectId" value="${param.projectID}">
-        <input type="submit" class="btn btn-primary btn-block" value="Add">
+<%--  UI Button  --%>
+        <button type="submit" class="btn-53 container-fluid mt-2" value="Submit">
+            <div class="original">Submit</div>
+            <div class="letters">
+
+                <span>S</span>
+                <span>U</span>
+                <span>B</span>
+                <span>M</span>
+                <span>I</span>
+                <span>T</span>
+            </div>
+        </button>
+    <%--  UI Button  --%>
     </form>
 </div>
 
