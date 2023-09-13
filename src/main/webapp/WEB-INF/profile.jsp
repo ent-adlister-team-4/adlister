@@ -133,11 +133,10 @@
     <h2 class="col-12">Your Projects</h2>
     <c:forEach var="project" items="${projects}">
     <div class="card">
-        <img src="https://burst.shopifycdn.com/photos/hiker-looks-up-at-vertical-mountain-peaks.jpg?width=925&exif=0&iptc=0"
-             class="card-img-top" alt="place-holder">
+        <img src="../img/grey1.jpeg" alt="Description of your image">
         <div class="card-body">
             <h5 class="card-title">${project.name}</h5>
-            <p class="card-text">${project.description}</p>
+<%--            <p class="card-text">${project.description}</p>--%>
         </div>
 
             <%--     UI Button Edit    --%>
