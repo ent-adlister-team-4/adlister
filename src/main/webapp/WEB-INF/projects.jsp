@@ -18,10 +18,9 @@
 <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-dark">
     <div class="col-lg-6 px-0">
         <div>
-            <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
-                efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+            <h1 class="display-4 fst-italic">Home for the future of web development</h1>
+            <p class="lead my-3">Explore our diverse web development portfolio, showcasing innovative and responsive websites that redefine digital experiences..</p>
+<%--            <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>--%>
         </div>
         <div>
             <form class="d-flex mt-3" role="search" action="/projects" method="get">
