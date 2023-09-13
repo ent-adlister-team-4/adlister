@@ -11,7 +11,43 @@
 <body>
 
 <div class="container">
+<%--    <h1>Welcome, ${sessionScope.user.username}!</h1>--%>
+
+    <div class="px-4 py-5 my-5 text-center">
+<%--        <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">--%>
     <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">${sessionScope.user.email}</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+<%--                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>--%>
+<%--                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>--%>
+    <div class="col-12">
+        <button class="btn-53 container-fluid" data-bs-toggle="modal"
+                data-bs-target="#changeUsername">
+            <div class="original">Edit Username</div>
+            <div class="letters">
+
+                <span>E</span>
+                <span>D</span>
+                <span>I</span>
+                <span>T</span>
+                <span>&nbsp;</span>
+                <span>U</span>
+                <span>S</span>
+                <span>E</span>
+                <span>R</span>
+                <span>N</span>
+                <span>A</span>
+                <span>M</span>
+                <span>E</span>
+
+            </div>
+        </button>
+    </div>
+
+            </div>
+        </div>
+    </div>
 
 
     <%--Modal for adding a project--%>
@@ -165,28 +201,29 @@
             </div>
         </button>
         <%--Edit UserName button--%>
-            <div class="col-12">
-                <button class="btn-53 container-fluid" data-bs-toggle="modal"
-                        data-bs-target="#changeUsername">
-                    <div class="original">Edit Username</div>
-                    <div class="letters">
+<%--            <div class="col-12">--%>
+<%--                <button class="btn-53 container-fluid" data-bs-toggle="modal"--%>
+<%--                        data-bs-target="#changeUsername">--%>
+<%--                    <div class="original">Edit Username</div>--%>
+<%--                    <div class="letters">--%>
 
-                        <span>E</span>
-                        <span>D</span>
-                        <span>I</span>
-                        <span>T</span>
-                        <span>&nbsp;</span>
-                        <span>U</span>
-                        <span>S</span>
-                        <span>E</span>
-                        <span>R</span>
-                        <span>N</span>
-                        <span>A</span>
-                        <span>M</span>
-                        <span>E</span>
+<%--                        <span>E</span>--%>i
+<%--                        <span>D</span>--%>
+<%--                        <span>I</span>--%>
+<%--                        <span>T</span>--%>
+<%--                        <span>&nbsp;</span>--%>
+<%--                        <span>U</span>--%>
+<%--                        <span>S</span>--%>
+<%--                        <span>E</span>--%>
+<%--                        <span>R</span>--%>
+<%--                        <span>N</span>--%>
+<%--                        <span>A</span>--%>
+<%--                        <span>M</span>--%>
+<%--                        <span>E</span>--%>
 
-                    </div>
-                </button>
+<%--                    </div>--%>
+<%--                </button>--%>
+<%--            </div>--%>
                 <%--Add project button--%>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
