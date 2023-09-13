@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Project;
 import com.codeup.adlister.models.User;
 
 import com.mysql.cj.jdbc.Driver;
@@ -21,7 +22,18 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public void editUserName(User loggedInUser) {
+        try {
+            String query = "UPDATE dev_project_lister.Users SET name = ? WHERE user_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, loggedInUser.getUsername());
+            stmt.setLong(2, loggedInUser.getId());
 
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error in editing UserName.", e);
+        }
+    }
 
 
     @Override
