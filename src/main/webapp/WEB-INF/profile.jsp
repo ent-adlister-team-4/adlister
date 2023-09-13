@@ -55,6 +55,44 @@
 </div>
 
 
+<div class="modal fade" id="changeUsername" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" style="max-height: 600px">
+        <div class="modal-content">
+            <div class="modal-header" style="border: black solid 1px">
+                <h1 class="modal-title fs-5" id="username">Edit Username</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body systemModalText" style="border: black solid 1px">
+                <div class="container">
+                    <h1>Username</h1>
+                    <form action="/username" method="POST">
+                        <div class="form-group">
+                            <label for="user_name">Change UserName</label>
+                            <input id="user_name" name="user_name" class="form-control" type="text">
+                        </div>
+                        <%--        UI Button        --%>
+                        <button type="submit" class="btn-53 mt-2 container-fluid" value="Add">
+                            <div class="original">Update</div>
+                            <div class="letters">
+
+                                <span>U</span>
+                                <span>P</span>
+                                <span>D</span>
+                                <span>A</span>
+                                <span>T</span>
+                                <span>E</span>
+                            </div>
+                        </button>
+                        <%--        UI Button        --%>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container-hero d-flex flex-wrap justify-content-between">
     <h2 class="col-12">Your Projects</h2>
     <c:forEach var="project" items="${projects}">
@@ -126,8 +164,30 @@
 
             </div>
         </button>
-        <%--Add project button--%>
+        <%--Edit UserName button--%>
+            <div class="col-12">
+                <button class="btn-53 container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#changeUsername">
+                    <div class="original">Edit Username</div>
+                    <div class="letters">
 
+                        <span>E</span>
+                        <span>D</span>
+                        <span>I</span>
+                        <span>T</span>
+                        <span>&nbsp;</span>
+                        <span>U</span>
+                        <span>S</span>
+                        <span>E</span>
+                        <span>R</span>
+                        <span>N</span>
+                        <span>A</span>
+                        <span>M</span>
+                        <span>E</span>
+
+                    </div>
+                </button>
+                <%--Add project button--%>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
                 crossorigin="anonymous"></script>

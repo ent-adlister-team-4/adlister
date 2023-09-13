@@ -25,8 +25,6 @@ public class MySQLProjectsDao implements Projects {
     }
 
     public void editProject(Project project) {
-        System.out.println("inside editProject DAO method. project received: ");
-        System.out.println(project);
         try {
             String query = "UPDATE dev_project_lister.Projects SET name = ?, description = ? WHERE project_id = ?";
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
