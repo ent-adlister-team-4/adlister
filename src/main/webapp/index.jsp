@@ -45,15 +45,15 @@
     <div  class="d-md-flex flex-md-equal my-md-3 ps-md-3">
         <div style="background-color: #393E46; width: 50%" class=" text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
+                <h2 class="display-5">Connect through code</h2>
+                <p class="lead">Like minded development is right around the corner!</p>
             </div>
             <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
         </div>
         <div style="width: 50%; background-color: #929AAB" class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
+                <h2 class="display-5">Accelerate your career</h2>
+                <p class="lead">57% of users get hired from recruiters finding their portfolio!</p>
             </div>
             <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
         </div>
