@@ -53,33 +53,9 @@
                 <h5 class="card-title">${project.name}</h5>
 <%--                <p class="card-text">${project.description}</p>--%>
                 <!-- Pass the project ID as a data attribute -->
-<%--                <button class="btn btn-primary view-description" data-bs-toggle="modal" data-bs-target="#projectModal" data-description="${project.description}" data-project-id="${project.id}">--%>
-<%--                    View Description--%>
-<%--                </button>--%>
-
-<%--    UI Button     --%>
-                <button class="btn-53 container-fluid" data-bs-toggle="modal" data-bs-target="#projectModal" data-description="${project.description}" data-project-id="${project.id}">
-                    <div class="original">View Description</div>
-                    <div class="letters">
-                        <span>V</span>
-                        <span>I</span>
-                        <span>E</span>
-                        <span>W</span>
-                        <span>&nbsp;</span>
-                        <span>D</span>
-                        <span>E</span>
-                        <span>S</span>
-                        <span>C</span>
-                        <span>R</span>
-                        <span>I</span>
-                        <span>P</span>
-                        <span>T</span>
-                        <span>I</span>
-                        <span>O</span>
-                        <span>N</span>
-                    </div>
+                <button class="btn btn-dark view-description" style="color: white" data-bs-toggle="modal" data-bs-target="#projectModal" data-description="${project.description}" data-project-id="${project.id}">
+                    View Description
                 </button>
-                    <%--    UI Button     --%>
             </div>
         </div>
     </c:forEach>
