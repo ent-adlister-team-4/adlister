@@ -206,7 +206,7 @@
 <%--                    <div class="original">Edit Username</div>--%>
 <%--                    <div class="letters">--%>
 
-<%--                        <span>E</span>--%>i
+<%--                        <span>E</span>--%>
 <%--                        <span>D</span>--%>
 <%--                        <span>I</span>--%>
 <%--                        <span>T</span>--%>
